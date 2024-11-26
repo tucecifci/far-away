@@ -5,21 +5,33 @@ import Form from './Form'
 import PackingList from './PackingList'
 import Stats from './Stats'
 
-const initialItems = [
-  { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: false },
-];
+// const initialItems = [
+//   { id: 1, description: "Passports", quantity: 2, packed: false },
+//   { id: 2, description: "Socks", quantity: 12, packed: false },
+// ];
 
 function App() {
   
   const [count, setCount] = useState(0)
+  const [items, setItems] = useState([]);
+  function handleAddItems(item) {
+    setItems((items) => [...items, item]); //burada push gibi metotlar kullanamayız çünkü immütabilite ilkesine uymamız gerekir, yani bir arrayin orjinalini bozmadan yeni bir item eklememiz lazım, bunun için spread operatörü kullanıyoruz.
+  }
+
+function handleDeleteıtem(id){
+  setItems(items=>items.filter(item=>item.id !== id))
+}
+
+function handleToggleItem(id){
+setItems((items) => items.map((item) => item.id === id ? {...item, packed: !item.packed} : item));
+}
 
   return (
     <>
     <div className='app'>
      <Logo />
-     <Form />
-     <PackingList />
+     <Form onAddItems= {handleAddItems} />
+     <PackingList items={items} onDeleteItem={handleDeleteıtem} onToggleItem={handleToggleItem} />
      <Stats />
     
      </div>
