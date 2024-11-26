@@ -7,7 +7,9 @@ Hello everybody! 👋 </br>
 
 ### 📷 Screenshot
 
+![screencapture-localhost-5174-2024-11-26-15_22_24](https://github.com/user-attachments/assets/64b29822-b3aa-4035-a420-64af65d28d5d)
 
+![screencapture-localhost-5174-2024-11-26-15_22_53](https://github.com/user-attachments/assets/3d073689-98c2-4704-b9b6-a5b3a16ad904)
 
 
 ### 🔗 Links
@@ -21,25 +23,6 @@ Hello everybody! 👋 </br>
 - CSS: For styling the application with a clean and minimal design.
 - JavaScript: To handle logic and interactivity.
 
-### 🧠 What I learned
-
-While working on the Random Quotes Generator project, I learned:
-
-- How to fetch data from an external API using JavaScript.
-- How to dynamically update the content of a webpage without refreshing the entire page.
-- How to integrate social media sharing functionality into a web application.
-- How to structure and style a simple web application using HTML and CSS.
-- How to manage project dependencies and version control using Git and GitHub.
-
-```javascript
-  var authors = Object.keys(quotes);
-  var author = authors[Math.floor(Math.random() * authors.length)];
-
-  var quote = quotes[author];
-
-  document.getElementById("quote").textContent = quote;
-  document.getElementById("author").textContent = author;
-```
 
 ### 👩🏼‍💻 Features
 
@@ -74,7 +57,33 @@ While working on the Random Quotes Generator project, I learned:
 
 - Progress Tracking: The progress bar at the bottom updates in real time as items are packed or removed.
 
+### Installation
+1. Clone the repository:
+ 
+```
+git clone https://github.com/your-username/far-away-packing-list.git
+```
+2.Navigate to the project directory:
+```
+cd far-away-packing-list
+```
+3. Install dependencies:
+ ```
+npm install
+```
+4. Start the development server:
+```
+npm start
+```
+5. Open your browser and visit:
+```
+[npm start](http://localhost:3000)
+```
 
+- Build for Production : To create a production-ready build, run:
+```
+npm run build
+```
 
 ### 🤌🏻 Useful resources
 
