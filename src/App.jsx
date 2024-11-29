@@ -14,6 +14,8 @@ function App() {
   
   const [count, setCount] = useState(0)
   const [items, setItems] = useState([]);
+
+
   function handleAddItems(item) {
     setItems((items) => [...items, item]); //burada push gibi metotlar kullanamayız çünkü immütabilite ilkesine uymamız gerekir, yani bir arrayin orjinalini bozmadan yeni bir item eklememiz lazım, bunun için spread operatörü kullanıyoruz.
   }
@@ -32,7 +34,7 @@ setItems((items) => items.map((item) => item.id === id ? {...item, packed: !item
      <Logo />
      <Form onAddItems= {handleAddItems} />
      <PackingList items={items} onDeleteItem={handleDeleteıtem} onToggleItem={handleToggleItem} />
-     <Stats />
+     <Stats items={items} />
     
      </div>
     </>
