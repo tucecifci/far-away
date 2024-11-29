@@ -5,7 +5,7 @@ import React, { useState } from "react";
 //   { id: 2, description: "Socks", quantity: 12, packed: false },
 // ];
 
-function PackingList({items, onDeleteItem, onToggleItem} ) {
+function PackingList({items, onDeleteItem, onToggleItem, onClearList} ) {
 const [sortBy, setSortBy] = useState("input");
 let sortedItems;
 if(sortBy === "input") sortedItems = items;
@@ -26,6 +26,7 @@ if(sortBy === "packed") sortedItems = items.slice().sort((a,b) => Number(a.packe
             <option value="description">Sort by description</option>
             <option value="packed">Sort by packed status</option>
           </select>
+          <button onClick={onClearList}>Clear List</button>
       </div>
     </div>
   );
